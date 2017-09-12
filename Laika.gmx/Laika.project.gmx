@@ -10,10 +10,7 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts">
-    <script>scripts\scr_laika_movement.gml</script>
-  </scripts>
-  <fonts name="fonts"/>
+  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_control</object>
     <object>objects\obj_laika</object>
