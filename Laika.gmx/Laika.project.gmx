@@ -7,20 +7,44 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_laika</sprite>
+    <sprite>sprites\sprCrap</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_laika_movement.gml</script>
+    <scripts name="Cutscene">
+      <script>scripts\cutsceneCreate.gml</script>
+      <script>scripts\cutsceneStep.gml</script>
+      <script>scripts\cutsceneEnd.gml</script>
+      <script>scripts\cutsceneDraw.gml</script>
+      <scripts name="AddElements">
+        <script>scripts\cutsceneAddText.gml</script>
+        <script>scripts\cutsceneAddCamMove.gml</script>
+        <script>scripts\cutsceneSetCamPos.gml</script>
+        <script>scripts\cutsceneAddDelay.gml</script>
+        <script>scripts\cutsceneAddUpdate.gml</script>
+      </scripts>
+      <script>scripts\cutscene.gml</script>
+      <script>scripts\cutsceneReady.gml</script>
+    </scripts>
+    <script>scripts\displayFixTEMP.gml</script>
+    <script>scripts\sprResize.gml</script>
   </scripts>
-  <fonts name="fonts"/>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_control</object>
     <object>objects\obj_laika</object>
+    <object>objects\object2</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rmFix</room>
     <room>rooms\main</room>
   </rooms>
+  <constants number="1">
+    <constant name="CUTSCENE_HEIGHT">display_get_gui_height()*.125</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
