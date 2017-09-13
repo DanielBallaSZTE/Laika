@@ -29,7 +29,7 @@
 
 spd = 2; //Max speed
 
-sprResize( 64, 64);
+sprResize(64, 64);
 </string>
           </argument>
         </arguments>
@@ -54,14 +54,14 @@ sprResize( 64, 64);
             <kind>1</kind>
             <string>var _tempSpeed;
 if (mouse_check_button(mb_right)) {
-    direction = point_direction( x, y, mouse_x, mouse_y);
-    dist = point_distance( x, y, mouse_x, mouse_y);
+    direction = point_direction(x, y, mouse_x, mouse_y);
+    dist = point_distance(x, y, mouse_x, mouse_y);
 }
-if (dist&gt;0) {
-    tempSpeed = min( spd , dist );
+if (dist &gt; 0) {
+    tempSpeed = min(spd, dist);
     dist -= tempSpeed;
-    x += lengthdir_x( tempSpeed , direction );
-    y += lengthdir_y( tempSpeed , direction );
+    x += lengthdir_x(tempSpeed, direction);
+    y += lengthdir_y(tempSpeed, direction);
 }
 </string>
           </argument>

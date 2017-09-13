@@ -1,1 +1,1 @@
-argument0[? "timeline"]+=room_speed*argument1;
+argument0[? "timeline"] += room_speed * argument1;

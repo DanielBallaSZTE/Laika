@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_enabled=1;
+            <string>view_enabled = 1;
 view_visible[0] = true;
 view_wport[0] = 1024;
 view_hport[0] = 768;
@@ -40,20 +40,20 @@ global.canInteract = true;
 
 cut1 = cutsceneCreate();
 
-cutsceneAddText( cut1 , "This is a very simple paragraph!" );
-cutsceneAddCamMove( cut1 , 1024 ,0 ,8 );
-cutsceneAddText( cut1, "This is a crap..." );
-cutsceneSetCamPos( cut1, 0, 0, 1.25 );
-cutsceneAddDelay( cut1, 0.5 );
-cutsceneAddText( cut1, "dum" );
-cutsceneSetCamPos( cut1, 0, 0, 1.5 );
-cutsceneAddDelay( cut1, 0.5 );
-cutsceneAddText( cut1, "dum" );
-cutsceneSetCamPos( cut1 , 0 , 0 , 2 );
-cutsceneAddDelay( cut1 , 0.5);
-cutsceneAddText( cut1 , "DUM");
+cutsceneAddText(cut1, "This is a very simple paragraph!");
+cutsceneAddCamMove(cut1, 1024 ,0 ,8);
+cutsceneAddText(cut1, "This is a crap...");
+cutsceneSetCamPos(cut1, 0, 0, 1.25);
+cutsceneAddDelay(cut1, 0.5);
+cutsceneAddText(cut1, "dum");
+cutsceneSetCamPos(cut1, 0, 0, 1.5);
+cutsceneAddDelay(cut1, 0.5);
+cutsceneAddText(cut1, "dum");
+cutsceneSetCamPos(cut1, 0, 0, 2);
+cutsceneAddDelay(cut1, 0.5);
+cutsceneAddText(cut1, "DUM");
 
-cutsceneEnd( cut1 );
+cutsceneEnd(cut1);
 </string>
           </argument>
         </arguments>
@@ -113,7 +113,7 @@ if (cutscene(cut1)) {
             <string>if(cutscene(cut1)) {
     cutsceneDraw(cut1);
 } else {
-    draw_text( 0, 0, "Ráght klikk tú mászkálás" );
+    draw_text(0, 0, "Ráght klikk tú mászkálás");
 }
 </string>
           </argument>

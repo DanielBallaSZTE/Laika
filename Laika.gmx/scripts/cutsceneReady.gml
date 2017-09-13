@@ -1,1 +1,1 @@
-return argument0[? "liney" ] >= CUTSCENE_HEIGHT;
+return argument0[? "liney"] >= CUTSCENE_HEIGHT;
