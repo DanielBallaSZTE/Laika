@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\spr_laika</sprite>
     <sprite>sprites\sprCrap</sprite>
+    <sprite>sprites\sprInv</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -28,7 +29,15 @@
       <script>scripts\cutsceneReady.gml</script>
     </scripts>
     <script>scripts\displayFixTEMP.gml</script>
-    <script>scripts\sprResize.gml</script>
+    <scripts name="Inventory">
+      <script>scripts\invAdd.gml</script>
+      <script>scripts\invDraw.gml</script>
+      <script>scripts\invInit.gml</script>
+    </scripts>
+    <scripts name="Task">
+      <script>scripts\taskInit.gml</script>
+      <script>scripts\taskObjAdd.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -37,13 +46,16 @@
     <object>objects\obj_control</object>
     <object>objects\obj_laika</object>
     <object>objects\object2</object>
+    <object>objects\objParItem</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmFix</room>
     <room>rooms\main</room>
   </rooms>
-  <constants number="1">
+  <constants number="3">
     <constant name="CUTSCENE_HEIGHT">display_get_gui_height()*.125</constant>
+    <constant name="GW">display_get_gui_width()</constant>
+    <constant name="GH">display_get_gui_height()</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

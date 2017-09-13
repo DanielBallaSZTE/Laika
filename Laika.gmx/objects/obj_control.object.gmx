@@ -39,7 +39,7 @@ zoom = 1;
 global.canInteract = true;
 
 cut1 = cutsceneCreate();
-
+/*
 cutsceneAddText(cut1, "This is a very simple paragraph!");
 cutsceneAddCamMove(cut1, 1024 ,0 ,8);
 cutsceneAddText(cut1, "This is a crap...");
@@ -51,7 +51,7 @@ cutsceneAddDelay(cut1, 0.5);
 cutsceneAddText(cut1, "dum");
 cutsceneSetCamPos(cut1, 0, 0, 2);
 cutsceneAddDelay(cut1, 0.5);
-cutsceneAddText(cut1, "DUM");
+cutsceneAddText(cut1, "DUM");*/
 
 cutsceneEnd(cut1);
 </string>

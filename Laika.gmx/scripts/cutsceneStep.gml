@@ -13,6 +13,14 @@ if( argument0[? "end" ] ) {
         argument0[? "liney"] += max( 3, (CUTSCENE_HEIGHT - argument0[? "liney"] ) / csceneSpd);
     } else {
         argument0[? "timeline" ]++;
+        if(argument0[? "evTime" + string(pos)]+argument0[? "evStart" + string(pos) ] < argument0[? "timeline"] ) {
+            pos++;
+            if(ds_map_exists(argument0 , "evType" + string(pos))) {
+                argument0[? "evTypePos"]= pos;
+            } else {
+                argument0[? "end"] = true;
+            }
+        }
         switch(argument0[? "evType" + string(pos)]) {
             case 0: //text
             break;
@@ -28,14 +36,7 @@ if( argument0[? "end" ] ) {
                 view_hview[0] = 768 / zoom;
             break;
         }
-        if(argument0[? "evTime" + string(pos) ]+argument0[? "evStart" + string(pos) ] < argument0[? "timeline"] ) {
-            pos++;
-            if(ds_map_exists(argument0 , "evType" + string(pos))) {
-                argument0[? "evTypePos"]= pos;
-            } else {
-                argument0[? "end"] = true;
-            }
-        }
+        
     }
 }
 return false;
