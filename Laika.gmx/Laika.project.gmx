@@ -41,12 +41,16 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
+    <font>fonts\font4</font>
+    <font>fonts\font5</font>
+    <font>fonts\font6</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_control</object>
     <object>objects\obj_laika</object>
     <object>objects\object2</object>
     <object>objects\objParItem</object>
+    <object>objects\structure</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmFix</room>

@@ -35,6 +35,11 @@ image_yscale = scale;
 
 invInit(10);
 taskInit();
+
+correct_path = ds_list_create();
+
+var p_coords;
+var _path;
 </string>
           </argument>
         </arguments>
@@ -135,6 +140,35 @@ for(i = 0; i &lt; instance_number(objParItem); i++) {
           <argument>
             <kind>1</kind>
             <string>draw_self();
+
+draw_set_colour(c_red);
+
+// draw_line(x, y, mouse_x, mouse_y);
+p_length_x = mouse_x - x;
+p_length_y = mouse_y - y;
+p_distance = sqrt(abs(p_length_x * p_length_y));
+
+var counter = 0;
+
+for (var i = 0; i &lt; p_distance; i++) {
+    if (!(i % 16)) {
+        if (!instance_position(x + i, y + i, structure)) {
+            _path[counter, 0] = x + i;
+            _path[counter, 1] = y + i;
+            counter++;
+        }
+    }
+}
+
+for (var i = 0; i &lt; counter - 1; i++) {
+    draw_text(0, i * 12, string(_path[i, 0]) + "; " + string(_path[i, 1]));
+    x_distance = _path[i + 1, 0] - _path[i, 0]; 
+    y_distance = _path[i + 1, 1] - _path[i, 1];
+    _distance = sqrt(abs(x_distance * y_distance));
+    if (_distance &lt; 32) {
+        draw_line(_path[i, 0], _path[i, 1], _path[i + 1, 0], _path[i + 1, 1]);
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -112,8 +112,6 @@ if (cutscene(cut1)) {
             <kind>1</kind>
             <string>if(cutscene(cut1)) {
     cutsceneDraw(cut1);
-} else {
-    draw_text(0, 0, "Ráght klikk tú mászkálás");
 }
 </string>
           </argument>
