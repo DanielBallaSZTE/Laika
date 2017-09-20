@@ -33,8 +33,14 @@ scale = 64 / sprite_get_width(sprite_index);
 image_xscale = scale;
 image_yscale = scale;
 
+dest_x = x;
+dest_y = y;
+
 invInit(10);
 taskInit();
+
+// Init the mp_grid
+scr_init_mp_grid();
 </string>
           </argument>
         </arguments>
@@ -59,23 +65,26 @@ taskInit();
             <kind>1</kind>
             <string>// Movement
 var _tempSpeed,ins;
+
 if (mouse_check_button(mb_right)) {
-    direction = point_direction(x, y, mouse_x, mouse_y);
-    dist = point_distance(x, y, mouse_x, mouse_y);
-    if (x!=mouse_x) {
-        image_xscale = scale*sign(mouse_x-x);
+    // Only start pathing if not a structure is called
+    if (!instance_position(mouse_x, mouse_y, obj_structure)) {
+        dest_x = mouse_x;
+        dest_y = mouse_y;
+        scr_find_path(dest_x, dest_y);
+    }
+    if (x != mouse_x &amp;&amp; path_exists(path)) {
+        image_xscale = scale * sign(path_get_x(path, 1) - x);
     }
 }
 
-// Direction based on movement
-if (dist &gt; 0) {
-    tempSpeed = min(spd, dist);
-    dist -= tempSpeed;
-    x += lengthdir_x(tempSpeed, direction);
-    y += lengthdir_y(tempSpeed, direction);
-    view_xview[0] = median(0, x-view_wview[0] * .5, room_width-view_wview[0]);
-    view_yview[0] = median(0, y-view_hview[0] * .5, room_height-view_hview[0]);
+// Delete the path having arrived to the destination
+if ((distance_to_point(dest_x, dest_y) &lt; spd) &amp;&amp; path_exists(path)) {
+    path_delete(path);
 }
+
+view_xview[0] = median(0, x-view_wview[0] * .5, room_width - view_wview[0]);
+view_yview[0] = median(0, y-view_hview[0] * .5, room_height - view_hview[0]);
 
 // Inventory object addition
 for(i = 0; i &lt; instance_number(objParItem); i++) {
@@ -135,6 +144,9 @@ for(i = 0; i &lt; instance_number(objParItem); i++) {
           <argument>
             <kind>1</kind>
             <string>draw_self();
+if (path_exists(path)) {
+    draw_path(path, x, y, true);
+}
 </string>
           </argument>
         </arguments>

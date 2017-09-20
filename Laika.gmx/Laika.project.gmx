@@ -9,6 +9,7 @@
     <sprite>sprites\spr_laika</sprite>
     <sprite>sprites\sprCrap</sprite>
     <sprite>sprites\sprInv</sprite>
+    <sprite>sprites\spr_structure</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -38,6 +39,11 @@
       <script>scripts\taskInit.gml</script>
       <script>scripts\taskObjAdd.gml</script>
     </scripts>
+    <scripts name="pathfinding">
+      <script>scripts\scr_init_mp_grid.gml</script>
+      <script>scripts\scr_destroy_mp_grid.gml</script>
+      <script>scripts\scr_find_path.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -46,6 +52,7 @@
     <object>objects\obj_control</object>
     <object>objects\obj_laika</object>
     <object>objects\object2</object>
+    <object>objects\obj_structure</object>
     <object>objects\objParItem</object>
   </objects>
   <rooms name="rooms">
